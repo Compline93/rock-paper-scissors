@@ -7,28 +7,40 @@
 </head>
 <body>
     <script>
-        const choices = ["rock", "paper", "scissors"];
-        function getComputerChoice() {
-            let computerSelection = choices.at(Math.floor(Math.random() * 3));
-            return computerSelection;
-        }
+        let playerWin = 0;
+        let computerWin = 0;
 
-        const playerInput = prompt("Rock, Paper, or Scissors?");
-        const playerSelection = playerInput.toLowerCase();
+        function game() {
+            do {
+                const choices = ["rock", "paper", "scissors"];
+                function getComputerChoice() {
+                let computerSelection = choices.at(Math.floor(Math.random() * 3));
+                    return computerSelection;
+                }
 
-        const computerSelection = getComputerChoice();
+                const computerSelection = getComputerChoice();
 
-        function playRound(playerSelection, computerSelection) {
-            if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
-                return `You lose: ${computerSelection} beats ${playerSelection}!`;
-            } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
-                return `You win: ${playerSelection} beats ${computerSelection}!`;
+                const playerInput = prompt("Rock, Paper, or Scissors?");
+                const playerSelection = playerInput.toLowerCase();
+
+                function playRound(playerSelection, computerSelection) {
+                    if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
+                        return [++computerWin, alert(`You lose: ${computerSelection} beats ${playerSelection}! Current score: player-${playerWin}, computer-${computerWin}`)];
+                    } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
+                        return [++playerWin, alert(`You win: ${playerSelection} beats ${computerSelection}! Current score: player-${playerWin}, computer-${computerWin}`)];
+                    } else {
+                        return `Tie: both picked ${playerSelection}.`;
+                    }
+                }
+
+                console.log(playRound(playerSelection, computerSelection));
+            } while ((playerWin < 3) || (computerWin < 3));
+            if (playerWin = 3) {
+                alert(`You win! Final score: player-${playerWin}, computer-${computerWin}`);
             } else {
-                return `Tie: both picked ${playerSelection}.`;
+                alert(`You lose! Final score: player-${playerWin}, computer-${computerWin}`);
             }
         }
-
-        alert(playRound(playerSelection, computerSelection));
     </script>
 </body>
 </html>
