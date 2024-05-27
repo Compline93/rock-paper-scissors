@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="rps.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    <script>
+    <!-- Moved to rps.js --<script>
         function game() {
             // Sets scores to 0 for each round
             let playerWin = 0;
@@ -49,6 +51,29 @@
                 alert(`You lose! Final score: player-${playerWin}, computer-${computerWin}`);
             }
         }
-    </script>
+    </script>-->
+
+    <div class="container">
+        <div class="center">
+            <div class="playerscore">
+                <p class="heading">Player Score:</p>
+                <p class="pscoretracker"></p>
+            </div>
+            <div class="narratebox">
+                <p class="playerchoice"></p>
+                <p class="computerchoice"></p>
+                <p class="narrative"></p>
+            </div>
+            <div class="computerscore">
+                <p class ="heading">Computer Score:</p>
+                <p class="pscoretracker"></p>
+            </div>
+        </div>
+        <div class="playbuttons">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1000px;
+    align-content: center;
+}
+
+.center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+.playerscore,
+.computerscore,
+.narratebox {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    padding: 0px 15px;
+}
+
+.narratebox {
+    width: 250px;
+    height: 150px;
+}
+
+.playerscore,
+.computerscore {
+    width: 125px;
+}
+
+.heading {
+    align-self: center;
+}
+
+.playbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-self: center;
+    max-width: 1000px;
+    margin: 0px 90px;
+}
