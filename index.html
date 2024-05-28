@@ -3,76 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="rps.js"></script>
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Rock, Paper, Scissors</title>
+    <script src="rps.js" defer></script>
 </head>
 <body>
-    <!-- Moved to rps.js --<script>
-        function game() {
-            // Sets scores to 0 for each round
-            let playerWin = 0;
-            let computerWin = 0;
-
-            // Game loop - runs until one player gets three points
-            do {
-
-                // Computer chooses randomly
-                const choices = ["rock", "paper", "scissors"];
-                function getComputerChoice() {
-                let computerSelection = choices.at(Math.floor(Math.random() * 3));
-                    return computerSelection;
-                }
-                const computerSelection = getComputerChoice();
-
-                // Asks and regularizes player input
-                const playerInput = prompt("Rock, Paper, or Scissors?");
-                const playerSelection = playerInput.toLowerCase();
-
-                // Plays a round of RPS, reports back win or loss and increments score
-                function playRound(playerSelection, computerSelection) {
-                    if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
-                        return [++computerWin, alert(`You lose: ${computerSelection} beats ${playerSelection}! Current score: player-${playerWin}, computer-${computerWin}`)];
-                    } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
-                        return [++playerWin, alert(`You win: ${playerSelection} beats ${computerSelection}! Current score: player-${playerWin}, computer-${computerWin}`)];
-                    } else {
-                        return alert(`Tie: both picked ${playerSelection}.`);
-                    }
-                }
-
-                console.log(playRound(playerSelection, computerSelection));
-            } 
-            while (playerWin < 3 && computerWin < 3);
-
-            // Declares winner of game round
-            if (playerWin == 3) {
-                alert(`You win! Final score: player-${playerWin}, computer-${computerWin}`);
-            } else if (computerWin == 3) {
-                alert(`You lose! Final score: player-${playerWin}, computer-${computerWin}`);
-            }
-        }
-    </script>-->
-
     <div class="container">
-        <div class="center">
-            <div class="playerscore">
-                <p class="heading">Player Score:</p>
-                <p class="pscoretracker"></p>
+        <div class="scoreboard">
+            <div class="playerside">
+                <p id="playerheading">Player:</p>
+                <p id="playerchoice"></p>
+                <p id="playerscore">0</p>
             </div>
-            <div class="narratebox">
-                <p class="playerchoice"></p>
-                <p class="computerchoice"></p>
-                <p class="narrative"></p>
+            <div class="announcer">
+                <p id="narrativeheading">Status:</p>
+                <p id="narrative">Make a Choice to Begin!</p>
             </div>
-            <div class="computerscore">
-                <p class ="heading">Computer Score:</p>
-                <p class="pscoretracker"></p>
+            <div class="computerside">
+                <p id="computerheading">Computer:</p>
+                <p id="computerchoice"></p>
+                <p id="computerscore">0</p>
             </div>
         </div>
-        <div class="playbuttons">
-            <button class="rock">Rock</button>
-            <button class="paper">Paper</button>
-            <button class="scissors">Scissors</button>
+        <div class="inputs">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
         </div>
     </div>
 </body>
