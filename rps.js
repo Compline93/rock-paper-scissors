@@ -24,11 +24,11 @@ function playRound(playerSelection, computerSelection) {
     if ((playerSelection == "rock" && computerSelection == "paper") ||
     (playerSelection == "paper" && computerSelection == "scissors") ||
     (playerSelection == "scissors" && computerSelection == "rock")) {
-        return "Loss";
+        return "Computer has won round!";
     } else if (playerSelection == computerSelection) {
-        return "Draw";
+        return "This round is a draw!";
     } else {
-        return "Win";
+        return "Player has won round!";
     }
 }
 
@@ -40,16 +40,16 @@ function buttonPress(e) {
     let computerSelection = getComputerChoice();
     let result = playRound(playerSelection, computerSelection);
 
-    if (result == "Loss") {
+    if (result == "Computer has won round!") {
         computerWins++;
-    } else if (result == "Draw") {
+    } else if (result == "This round is a draw!") {
         console.log("Draw");
     } else {
         playerWins++;
     }
 
-    document.getElementById("playerchoice").textContent = `${playerSelection}`;
-    document.getElementById("computerchoice").textContent = `${computerSelection}`;
+    document.getElementById("playerchoice").textContent = `Player has chosen ${playerSelection}`;
+    document.getElementById("computerchoice").textContent = `Computer has chosen ${computerSelection}`;
 
     document.getElementById("narrative").textContent = result;
     document.getElementById("playerscore").textContent = playerWins;
